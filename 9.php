@@ -9,11 +9,13 @@
     */
     function generateFibonacci($n) {
         if (!is_integer($n)) {
-            return "Not an integer!";
+            echo "Not an integer!"."\n";
+            return null;
         }
 
         if ($n < 1) {
-            return "Number has to be greater than 0";
+            echo "Number has to be greater than 0"."\n";
+            return null;
         } else if ($n == 1) {
             return [0];
         } else if ($n == 2) {
@@ -32,5 +34,5 @@
     echo "[".implode(", ", generateFibonacci(2))."]\n";
     echo "[".implode(", ", generateFibonacci(3))."]\n";
     echo "[".implode(", ", generateFibonacci(7))."]\n";
-    echo "[".implode(", ", generateFibonacci(10))."]\n";
+    echo "[".implode(", ", generateFibonacci(100))."]\n";
 ?>

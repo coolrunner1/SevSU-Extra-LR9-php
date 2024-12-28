@@ -16,7 +16,8 @@
 
     function factorial($number) {
         if (!is_integer($number)) {
-            return "Not an integer!";
+            echo "Not an integer!"."\n";
+            return null;
         }
 
         return factorialCalculate($number);

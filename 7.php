@@ -9,11 +9,13 @@
     */
     function bubbleSort($array) {
         if(!is_array($array)) {
-            return "Not an array!";
+            echo "Not an array!"."\n";
+            return null;
         }
 
         if (empty($array)) {
-            return 'Array is empty!';
+            echo 'Array is empty!'."\n";
+            return null;
         }
 
         for ($i = 0; $i < sizeof($array)-2; $i++) {
@@ -29,7 +31,7 @@
         return $array;
     }
     
-    echo "[".implode(", ", bubbleSort([64, 34, 25, 12, 22, 11, 90]))."]\n";
+    echo "[".implode(", ", bubbleSort([-64, 34, 25, 12, 22, 11, 90]))."]\n";
     echo "[".implode(", ", bubbleSort([1, 2, 3, 4, 2, 5, 5]))."]\n";
     echo "[".implode(", ", bubbleSort([5, 3, 9, 1, 6]))."]\n";
     echo "[".implode(", ", bubbleSort([1, 1, 1, 1, 1]))."]\n";

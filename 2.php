@@ -9,7 +9,8 @@
     */
     function checkIfPalindrome($string) {
         if (!is_string($string)) {
-            return "Not a string!";
+            echo "Not a string!"."\n";
+            return false;
         }
 
         if ($string == strrev($string)) {

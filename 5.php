@@ -9,9 +9,10 @@
     */
     function reverseString($string) {
         if (!is_string($string)) {
-            return "Not a string!";
+            echo "Not a string!"."\n";
+            return null;
         }
-        
+
         $reversedString = "";
         for ($i = strlen($string)-1; $i >= 0; $i--) {
             $reversedString = $reversedString."".$string[$i];

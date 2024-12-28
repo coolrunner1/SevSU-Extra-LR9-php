@@ -13,7 +13,8 @@
 
     function vowelsCount($string) {
         if (!is_string($string)) {
-            return "Not a string!";
+            echo "Not a string!"."\n";
+            return null;
         }
 
         $count = 0;

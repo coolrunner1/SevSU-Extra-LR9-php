@@ -9,11 +9,13 @@
     */
     function secondGreatestNumber($array) {
         if(!is_array($array)) {
-            return "Not an array!";
+            echo "Not an array!"."\n";
+            return null;
         }
 
         if (empty($array)) {
-            return 'Array is empty!';
+            echo 'Array is empty!'."\n";
+            return null;
         }
 
         $prevMax = null;
@@ -21,7 +23,8 @@
 
         foreach ($array as $number) {
             if (!is_numeric($number)) {
-                return 'Array contains invalid elements!';
+                echo 'Array contains invalid elements!'."\n";
+                return false;
             }
 
             if ($number > $max) {

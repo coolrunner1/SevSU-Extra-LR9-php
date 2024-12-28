@@ -10,11 +10,13 @@
 
     function greatestNumber($array) {
         if(!is_array($array)) {
-            return "Not an array!";
+            echo "Not an array!"."\n";
+            return null;
         }
 
         if (empty($array)) {
-            return 'Array is empty!';
+            echo 'Array is empty!'."\n";
+            return null;
         }
 
         $max = null;
@@ -33,7 +35,7 @@
         return $max;
     }
 
-    echo greatestNumber([])."\n";;
-    echo greatestNumber([1, 'string', 2])."\n";;
+    echo greatestNumber(879868)."\n";
+    echo greatestNumber([1, 'string', 2])."\n";
     echo greatestNumber([5, 3, 9, 1, 6])."\n";
 ?>

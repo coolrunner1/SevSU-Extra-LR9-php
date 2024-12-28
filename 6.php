@@ -9,35 +9,37 @@
     */
     function checkArrayDuplicates($array) {
         if(!is_array($array)) {
-            return "Not an array!";
+            echo "Not an array!"."\n";
+            return null;
         }
 
         if (empty($array)) {
-            return 'Array is empty!';
+            echo 'Array is empty!'."\n";
+            return null;
         }
 
         $map = array();
+        $duplicateNumbers = array();
 
         foreach ($array as $number) {
             if (!is_numeric($number)) {
-                return 'Array contains invalid elements!';
+                echo 'Array contains invalid elements!'."\n";
+                return null;
             }
 
             $map[$number] = !array_key_exists($number, $map) ? 1 : $map[$number]+1;
-            if ($map[$number] > 1) {
-                return true;
+            if ($map[$number] > 1 && !in_array($number, $duplicateNumbers)) {
+                array_push($duplicateNumbers, $number);
             }
         }
 
-        return false;
+        asort($duplicateNumbers);
+        return sizeof($duplicateNumbers) < 1 ? "false"."\n" : "true: [".implode(", ", $duplicateNumbers)."]\n";
     }
 
-    function booleanToString($bool) {
-        return ($bool ? 'true' : 'false')."\n";
-    }
-    
-    echo booleanToString(checkArrayDuplicates([5, 3, 9, 1, 6]));
-    echo booleanToString(checkArrayDuplicates([5, 3, 5, 1, 6]));
-    echo booleanToString(checkArrayDuplicates([5, 3, 2, 1, 6, 2, 4, 5]));
-    echo booleanToString(checkArrayDuplicates([1, 2, 3, 4, 2, 5, 5]));
+
+
+    echo checkArrayDuplicates([5, 3, 9, 1, 6]);
+    echo checkArrayDuplicates([5, 3, 2, 1, 6, 2, 4, 5]);
+    echo checkArrayDuplicates([1, 6, 6, 2, 3, 4, 2, 5, 5]);
 ?>
